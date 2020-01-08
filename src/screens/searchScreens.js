@@ -5,7 +5,7 @@ import useResults from '../hooks/useResults';
 import ResultsList from '../components/resultsList';
 
 
-const SearchScreen=({navigation})=>{
+const SearchScreen=()=>{
       const [term,setTerm]=useState('');
       const [searchApi,results]=useResults();
 
@@ -15,19 +15,19 @@ return results.filter(result=>{
 });
 };
       return (
-    <View style={{flex:1}}>
+    <>
         <SearchBar term={term}
-        onTermChange={setTerm} 
-        onTermSubmit={()=>{searchApi(term)}}/>
+        onTermChange={setTerm}  
+        onTermSubmit={()=>searchApi(term)}/>
         <ScrollView>
         <ResultsList title='Cost Effectife' results={filterResultsByPrice('$')} 
          />        
         <ResultsList title='Bit Pricier' results={filterResultsByPrice('$$')}
         />        
-        <ResultsList title='bit spender' results={filterResultsByPrice('$$$')}
+        <ResultsList title='bit spender' results={filterResultsByPrice('$$$$')}
         />        
         </ScrollView>
-    </View>
+    </>
 )
 };
 const styles=StyleSheet.create({});
