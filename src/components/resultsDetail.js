@@ -1,4 +1,3 @@
-import react from 'react';
 import {View,Image,Text,StyleSheet} from 'react-native';
 
 const ResultsDetail=({result})=>{
